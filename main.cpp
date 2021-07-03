@@ -85,7 +85,7 @@ void variableDeclarations()
 
     //i know there's unsigned shorts and longs of chars ints and doubles but most sites seemed to focus on these mostly 
     
-    ignoreUnused(number,isThisOn,isPlaying,gotCheese,numberOfCats,wheels,enemyCount,volume,degrees,pi,keyPressed,currency,separator,bufferLength,seconds,fearFactor,newValue,altitude,rotation); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, isThisOn, isPlaying, gotCheese, numberOfCats, wheels,enemyCount, volume, degrees, pi, keyPressed, currency, separator, bufferLength, seconds, fearFactor, newValue,altitude, rotation); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -104,7 +104,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 void getHandPosition(float vertical, float horizontal)
 {
-    ignoreUnused(vertical,horizontal);
+    ignoreUnused(vertical, horizontal);
 }
 /*
  2)
@@ -123,7 +123,7 @@ void setState (bool state=false)
 /*
  4)
  */
-int instNumber(int category,int presetNumber)
+int instNumber(int category, int presetNumber)
 {
     ignoreUnused(category, presetNumber);
     //really necessary to split line 130 to three lines (based on Coding standards)?
@@ -134,7 +134,7 @@ int instNumber(int category,int presetNumber)
  */
 void getMidiNoteInfo (int noteNum, int noteVel, int MidiCh=0)
 {
-    ignoreUnused(noteNum,noteVel,MidiCh);
+    ignoreUnused(noteNum, noteVel,MidiCh);
 }
 /*
  6)
@@ -148,7 +148,7 @@ void getKeyPressed(char key)
  */
 bool isInputActive (float audio1, float audio2, int midi1Vel, int midi2Vel)
 {
-    ignoreUnused(audio1,audio2,midi1Vel,midi2Vel);
+    ignoreUnused(audio1, audio2, midi1Vel, midi2Vel);
     return{};
 }
 /*
@@ -164,7 +164,7 @@ int printAsciiNum(char input = '@')
  */
 void setBufferValue(int bufferNum, double value)
 {
-    ignoreUnused(bufferNum,value);
+    ignoreUnused(bufferNum, value);
 }
 /*
  10)
@@ -200,7 +200,7 @@ int main()
     //3)
     setState(true);
     //4)
-    auto currInst = instNumber(5,31);
+    auto currInst = instNumber(5, 31);
     //5)
     getMidiNoteInfo(62, 85, 0);
     //6)
@@ -214,7 +214,7 @@ int main()
     //10)
     auto convertedOutput = convertFloat(-8.0f);
     
-    ignoreUnused(carRented,getHandPosition,sendObject,setState,currInst,getMidiNoteInfo,getKeyPressed,currActiveState,currAsciiValue,setBufferValue,convertedOutput);
+    ignoreUnused(carRented, getHandPosition, sendObject, setState, currInst, getMidiNoteInfo, getKeyPressed, currActiveState, currAsciiValue, setBufferValue, convertedOutput);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
