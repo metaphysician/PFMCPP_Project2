@@ -16,14 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
- 
- 
+ float
+ int
+ char
+ bool
+ double
+ unsigned int
+ void
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -60,10 +59,33 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    bool isThisOn = false;
+    bool isPlaying = true;
+    bool gotCheese = false;
 
+    int numberOfCats = 5;
+    int wheels = 4;
+    int enemyCount = 11;
+
+    float volume = .89f;
+    float degrees = 130.4f;
+    float pi = 3.14159f;
+
+    char keyPressed = 'a';
+    char currency = '$';
+    char separator = '|';
+
+    double bufferLength = 134585;
+    double seconds = 12.34758;
+    double fearFactor = -2375.1;
+
+    unsigned int newValue = 34;
+    unsigned int altitude = 20305;
+    unsigned int rotation = 165;
+
+    //i know there's unsigned shorts and longs of chars ints and doubles but most sites seemed to focus on these mostly 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, isThisOn, isPlaying, gotCheese, numberOfCats, wheels,enemyCount, volume, degrees, pi, keyPressed, currency, separator, bufferLength, seconds, fearFactor, newValue,altitude, rotation); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -80,43 +102,78 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+void getHandPosition(float vertical, float horizontal)
+{
+    ignoreUnused(vertical, horizontal);
+}
 /*
  2)
  */
-
+void sendObject(int objNumber)
+{
+    ignoreUnused(objNumber);
+}
 /*
  3)
  */
-
+void setState (bool state=false)
+{
+    ignoreUnused(state);
+}
 /*
  4)
  */
-
+int instNumber(int category, int presetNumber)
+{
+    ignoreUnused(category, presetNumber);
+    //really necessary to split line 130 to three lines (based on Coding standards)?
+    return{};
+}
 /*
  5)
  */
-
+void getMidiNoteInfo (int noteNum, int noteVel, int MidiCh=0)
+{
+    ignoreUnused(noteNum, noteVel,MidiCh);
+}
 /*
  6)
  */
-
+void getKeyPressed(char key)
+{
+    ignoreUnused(key);
+}
 /*
  7)
  */
-
+bool isInputActive (float audio1, float audio2, int midi1Vel, int midi2Vel)
+{
+    ignoreUnused(audio1, audio2, midi1Vel, midi2Vel);
+    return{};
+}
 /*
  8)
  */
-
+int printAsciiNum(char input = '@')
+{
+    ignoreUnused(input);
+    return{};
+}
 /*
  9)
  */
-
+void setBufferValue(int bufferNum, double value)
+{
+    ignoreUnused(bufferNum, value);
+}
 /*
  10)
  */
-
+unsigned int convertFloat(float number = -1.0f)
+{
+    ignoreUnused(number);
+    return{};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -137,27 +194,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    getHandPosition(980.0f, 432.0f);
     //2)
-    
+    sendObject(21);
     //3)
-    
+    setState(true);
     //4)
-    
+    auto currInst = instNumber(5, 31);
     //5)
-    
+    getMidiNoteInfo(62, 85, 0);
     //6)
-    
+    getKeyPressed('U');
     //7)
-    
+    auto currActiveState = isInputActive(0.0f, 0.10f, 0, 68);
     //8)
-    
+    auto currAsciiValue =  printAsciiNum('%');
     //9)
-    
+    setBufferValue(4,14857.675);
     //10)
+    auto convertedOutput = convertFloat(-8.0f);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, getHandPosition, sendObject, setState, currInst, getMidiNoteInfo, getKeyPressed, currActiveState, currAsciiValue, setBufferValue, convertedOutput);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
